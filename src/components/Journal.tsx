@@ -2,6 +2,7 @@ import Image from "next/image";
 import SectionLabel from "./SectionLabel";
 import Reveal from "./motion/Reveal";
 import SplitText from "./motion/SplitText";
+import JournalSlides from "./JournalSlides";
 import styles from "./Journal.module.scss";
 
 export default function Journal() {
@@ -39,22 +40,7 @@ export default function Journal() {
         <Reveal className={styles.event} delay={0.18}>
           <div className={styles.rule} aria-hidden="true" />
 
-          <div className={styles.eventGrid}>
-            <div className={styles.date}>
-              <p className={styles.day}>13</p>
-              <p className={styles.month}>AUG 2026</p>
-            </div>
-
-            <div className={styles.narrative}>
-              <p className={styles.category}>PERFORMANCE · PAST EVENT</p>
-              <h3 className={styles.eventTitle}>Raghaveeyam</h3>
-              <p className={styles.copy}>
-                An observance of Ramayana Month. Bhagavatpadham Bharathanatyam
-                at Sreepoornathrayeesa Temple, Tripunithura.
-              </p>
-
-            </div>
-          </div>
+          <JournalSlides />
         </Reveal>
       </div>
     </section>

@@ -186,3 +186,41 @@ export const story = {
     },
   ],
 } as const;
+
+export const journalEntries = [
+  {
+    day: "13",
+    month: "AUG 2026",
+    category: "PERFORMANCE · PAST EVENT",
+    title: "Raghaveeyam",
+    copy: "An observance of Ramayana Month. Bhagavatpadham Bharathanatyam at Sreepoornathrayeesa Temple, Tripunithura.",
+  },
+  {
+    day: "21",
+    month: "JUL 2026",
+    category: "WORKSHOP · PAST EVENT",
+    title: "Mudra & Abhinaya",
+    copy: "A weekend intensive on hand gestures and facial expression, led by senior gurus for students of all levels.",
+  },
+  {
+    day: "05",
+    month: "JUN 2026",
+    category: "RESIDENCY · PAST EVENT",
+    title: "Kalari Mornings",
+    copy: "Ten dawn sessions of Kalaripayattu fundamentals, breath and body conditioning with visiting practitioners.",
+  },
+  {
+    day: "18",
+    month: "APR 2026",
+    category: "RECITAL · PAST EVENT",
+    title: "Vasantha Utsavam",
+    copy: "A spring evening of Bharatanatyam and contemporary pieces, performed by the academy's senior students.",
+  },
+  {
+    day: "02",
+    month: "MAR 2026",
+    category: "EXHIBITION · PAST EVENT",
+    title: "Lines of Movement",
+    copy: "Sketches, paintings and photographs that follow dancers through rehearsal, stage and stillness.",
+  },
+];

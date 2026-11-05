@@ -31,7 +31,7 @@
 
 .heading {
   position: absolute;
-  top: 216px;
+  top: 171px;
   left: 91px;
   width: 430px;
 }
@@ -49,7 +49,7 @@
 
 .event {
   position: absolute;
-  top: 215px;
+  top: 170px;
   left: 558px;
   width: 600px;
 }
@@ -58,6 +58,137 @@
   width: 100%;
   height: 1px;
   background: #c9c1b3;
+}
+
+.stack {
+  // All entries share one grid cell, so the box is as tall as the tallest
+  // entry and nothing jumps when the active one changes.
+  display: grid;
+}
+
+.entry {
+  grid-area: 1 / 1;
+  padding-bottom: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(24px);
+  transition:
+    opacity 0.9s var(--ease-out),
+    transform 0.9s var(--ease-out),
+    visibility 0s linear 0.9s;
+
+  &.past {
+    transform: translateY(-24px);
+  }
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition-delay: 0.25s, 0.25s, 0s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .entry,
+  .entry.past {
+    transform: none;
+    transition-duration: 0.01s;
+  }
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 12px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(201, 193, 179, 0.28);
+}
+
+.explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 20px;
+  border: 1px solid #d8be8d;
+  border-radius: 999px;
+
+  @include sans(500);
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #d8be8d;
+  transition:
+    background 0.3s var(--ease-out),
+    color 0.3s var(--ease-out);
+
+  img {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s var(--ease-out);
+  }
+
+  &:hover {
+    background: #d8be8d;
+    color: #3a0a12;
+
+    img {
+      transform: translate(2px, -2px);
+      filter: invert(1);
+    }
+  }
+
+  @include focus-ring(var(--color-gold-light));
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.counter {
+  margin-right: 6px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: #d8be8d;
+  font-variant-numeric: tabular-nums;
+}
+
+.arrow {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid rgba(216, 190, 141, 0.5);
+  border-radius: 50%;
+  background: transparent;
+  color: #d8be8d;
+  cursor: pointer;
+  transition:
+    background 0.3s var(--ease-out),
+    color 0.3s var(--ease-out),
+    border-color 0.3s var(--ease-out);
+
+  svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  &:hover {
+    background: #d8be8d;
+    border-color: #d8be8d;
+    color: #3a0a12;
+  }
+
+  @include focus-ring(var(--color-gold-light));
 }
 
 .eventGrid {
